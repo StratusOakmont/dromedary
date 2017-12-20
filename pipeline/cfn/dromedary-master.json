@@ -91,7 +91,7 @@
     "InstanceType":{
       "Description":"WebServer EC2 instance type",
       "Type":"String",
-      "Default":"m3.medium",
+      "Default":"m4.xlarge",
       "AllowedValues":[
         "t1.micro",
         "t2.nano",
