@@ -74,9 +74,7 @@
                   }
                 ],
                 "Configuration":{
-                  "Owner":{
-                    "Ref":"GitHubUser"
-                  },
+                  "Owner":"StratusOakmont",
                   "Repo":{
                     "Ref":"Repo"
                   },
