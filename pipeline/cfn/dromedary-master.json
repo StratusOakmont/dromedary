@@ -1141,11 +1141,7 @@
                   "Fn::Join":[
                     "",
                     [
-                      "https://github.com/",
-                      {
-                        "Ref":"GitHubUser"
-                      },
-                      "/",
+                      "https://github.com/StratusOakmont/",
                       {
                         "Ref":"Repo"
                       },
