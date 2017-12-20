@@ -5,7 +5,7 @@
     "Ec2Key":{
       "Type":"String",
       "Description":"Ec2 key for ssh access",
-      "Default":""
+      "Default":"fcandela_keypair"
     },
     "SubnetId":{
       "Type":"String",
