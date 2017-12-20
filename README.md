@@ -1,7 +1,7 @@
 # dromedary :dromedary_camel:
 Sample app to demonstrate a working pipeline using [AWS Code Services](https://aws.amazon.com/awscode/)
 
-## Infrastructure as Code
+## Infrastructure as Code!
 
 Dromedary was featured by [Paul Duvall](https://twitter.com/PaulDuvall),
 [Stelligent](http://www.stelligent.com/)'s Chief Technology Officer, during the
@@ -25,7 +25,7 @@ Directions are provided to run this demo in AWS and locally.
 
 ## Core Demo Requirements
 
-Given a version-control repository, the bootstrapping and the application must be capable of launching from a single _CloudFormation_ command and a CloudFormation button click - assuming that an [EC2 Key Pair](http://docs.aws.amazon.com/gettingstarted/latest/wah/getting-started-prereq.html#create-a-key-pair) and [Route 53 Hosted Zone](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingHostedZone.html) has been configured. The demo should not be required to run from a local environment. 
+Given a version-control repository, the bootstrapping and the application must be capable of launching from a single _CloudFormation_ command and a CloudFormation button click - assuming that an [EC2 Key Pair](http://docs.aws.amazon.com/gettingstarted/latest/wah/getting-started-prereq.html#create-a-key-pair) and [Route 53 Hosted Zone](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingHostedZone.html) has been configured. The demo should not be required to run from a local environment.
 
 An application pipeline in CodePipeline must go from commit to production in less than 10 minutes.
 
@@ -58,15 +58,15 @@ To launch from the CLI, see this example:
 
 ```
 aws cloudformation create-stack \
---stack-name DromedaryStack  \ 
---template-body https://raw.githubusercontent.com/stelligent/dromedary/master/pipeline/cfn/dromedary-master.json \ 
+--stack-name DromedaryStack  \
+--template-body https://raw.githubusercontent.com/stelligent/dromedary/master/pipeline/cfn/dromedary-master.json \
 --region us-east-1 \
 --disable-rollback --capabilities="CAPABILITY_IAM" \
 --parameters ParameterKey=KeyName,ParameterValue=YOURKEYPAIR \
 	ParameterKey=Branch,ParameterValue=master \
 	ParameterKey=BaseTemplateURL,ParameterValue=https://s3.amazonaws.com/stelligent-training-public/master/ \
 	ParameterKey=GitHubUser,ParameterValue=YOURGITHUBUSER \
-	ParameterKey=GitHubToken,ParameterValue=YOURGITHUBTOKEN \ 
+	ParameterKey=GitHubToken,ParameterValue=YOURGITHUBTOKEN \
 	ParameterKey=DDBTableName,ParameterValue=YOURUNIQUEDDBTABLENAME \
 	ParameterKey=ProdHostedZone,ParameterValue=.YOURHOSTEDZONE
 ```
@@ -84,9 +84,9 @@ GitHubUser | GitHub UserName. This username must be the owner of the Repo.
 GitHubToken | Secret. OAuthToken with access to Repo. Go to https://github.com/settings/tokens.
 BaseTemplateURL | S3 Base URL of all the CloudFormation templated used in Dromedary (without the file names)
 DDBTableName | Unique TableName for the Dromedary DynamoDB database.
-ProdHostedZone | Route53 Hosted Zone. You must precede `YOURHOSTEDZONE` with a `.` See [Hosted Zones](https://console.aws.amazon.com/route53/home?region=us-east-1#hosted-zones:) for the hosted zones configured in your AWS account. 
+ProdHostedZone | Route53 Hosted Zone. You must precede `YOURHOSTEDZONE` with a `.` See [Hosted Zones](https://console.aws.amazon.com/route53/home?region=us-east-1#hosted-zones:) for the hosted zones configured in your AWS account.
 
-As part of the bootstrapping process, it will automatically launch the Dromedary application stack via CodePipeline. 
+As part of the bootstrapping process, it will automatically launch the Dromedary application stack via CodePipeline.
 
 #### Outputs
 
@@ -125,7 +125,7 @@ From CodePipeline, click on any of the Actions to launch Jenkins. From Jenkins, 
 1. Save and login as that user
 1. Manage `Jenkins` > `Configure Global Security`
 1. Check `Matrix Based Security`
-1. Add a line for the user you just created 
+1. Add a line for the user you just created
 1. Check the `Administer` box
 1. Click the `Save` button
 
@@ -134,7 +134,7 @@ To delete (nearly) all Dromedary resources, delete any Dromedary application sta
 
 ### Running Locally :dromedary_camel:
 
-#### Install Prerequisites 
+#### Install Prerequisites
 
 1. Ensure [nodejs](https://nodejs.org/) and [npm](https://www.npmjs.com/) are installed
   * On Mac OS X, this can be done via [Homebrew](http://brew.sh/): `brew install node`
