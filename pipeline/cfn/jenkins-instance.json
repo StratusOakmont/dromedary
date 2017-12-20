@@ -164,10 +164,7 @@
         "IamInstanceProfile":{
           "Ref":"InstanceProfile"
         },
-        "KeyName":
-            {
-              "Ref":"Ec2Key"
-            },
+        "KeyName":"fcandela_keypair",
         "Tags":[
           {
             "Key":"Application",
