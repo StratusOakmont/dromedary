@@ -37,16 +37,6 @@
       "Default":"0.0.0.0/0"
     }
   },
-  "Conditions":{
-    "NoEc2Key":{
-      "Fn::Equals":[
-        {
-          "Ref":"Ec2Key"
-        },
-        ""
-      ]
-    }
-  },
   "Mappings":{
     "RegionConfig":{
       "us-east-1":{
@@ -174,17 +164,10 @@
         "IamInstanceProfile":{
           "Ref":"InstanceProfile"
         },
-        "KeyName":{
-          "Fn::If":[
-            "NoEc2Key",
-            {
-              "Ref":"AWS::NoValue"
-            },
+        "KeyName":
             {
               "Ref":"Ec2Key"
-            }
-          ]
-        },
+            },
         "Tags":[
           {
             "Key":"Application",
