@@ -1,7 +1,7 @@
 # dromedary :dromedary_camel:
 Sample app to demonstrate a working pipeline using [AWS Code Services](https://aws.amazon.com/awscode/)
 
-## Infrastructure as Code!
+## Infrastructure as Code
 
 Dromedary was featured by [Paul Duvall](https://twitter.com/PaulDuvall),
 [Stelligent](http://www.stelligent.com/)'s Chief Technology Officer, during the
